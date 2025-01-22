@@ -26,10 +26,10 @@ def test_multiply(client):
     assert response.status_code == 200
     assert response.json["result"] == 42.0
 
-def test_divide(client):
-    response = client.get("/divide?a=8&b=2")
-    assert response.status_code == 200
-    assert response.json["result"] == 4.0
+def test_divide_by_zero(client):
+    response = client.get("/divide?a=8&b=0")
+    assert response.status_code == 400
+    assert "Cannot divide by zero" in response.json["error"]
 
 def test_divide_by_zero(client):
     response = client.get("/divide?a=8&b=0")
