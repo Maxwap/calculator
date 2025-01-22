@@ -10,7 +10,7 @@ on:
 
 permissions:
   contents: read
-  packages: write_package
+  packages: write
 
 jobs:
   test-and-deploy:
