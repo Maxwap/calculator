@@ -34,4 +34,4 @@ def test_divide_by_zero(client):
 def test_divide_by_zero(client):
     response = client.get("/divide?a=8&b=0")
     assert response.status_code == 400
-    assert "Division by zero is not allowed" in response.json["error"]
+    assert "Cannot divide by zero" in response.json["error"]
