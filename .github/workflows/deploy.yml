@@ -9,8 +9,10 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
   packages: write
+  write_package: true
+
 
 jobs:
   test-and-deploy:
